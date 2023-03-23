@@ -9,7 +9,10 @@ janela.geometry('500x300')
 def clique():
     print('Login efetuado com sucesso! Seja bem vindo!')
 
-texto = customtkinter.CTkLabel(janela, text='Fazer Login')
+def Lembrar():
+    print('Sua senha será lembrada.')
+
+texto = customtkinter.CTkLabel(janela, text='Fazer Login') 
 
 email = customtkinter.CTkEntry(janela,
                                placeholder_text='E-mail')
@@ -17,12 +20,16 @@ senha = customtkinter.CTkEntry(janela,
                                placeholder_text='Senha',
                                show='*')
 
-botao = customtkinter.CTkButton(janela, text='Login',
+checkbox = customtkinter.CTkCheckBox(janela, text='Lembrar Senha',
+                                     command=Lembrar)
+
+botao = customtkinter.CTkButton(janela, text='Entrar',
                                 command=clique)
 
 texto.pack(padx=10, pady=10)
 email.pack(padx=10, pady=10)
 senha.pack(padx=10, pady=10)
+checkbox.pack(padx=10, pady=10)
 botao.pack(padx=10, pady=10)
 
 
